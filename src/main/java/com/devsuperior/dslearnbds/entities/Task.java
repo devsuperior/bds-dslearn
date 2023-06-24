@@ -2,14 +2,13 @@ package com.devsuperior.dslearnbds.entities;
 
 import java.time.Instant;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_task")
 public class Task extends Lesson {
-	private static final long serialVersionUID = 1L;
 
 	private String description;
 	private Integer questionCount;

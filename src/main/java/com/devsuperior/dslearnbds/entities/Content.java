@@ -1,12 +1,11 @@
 package com.devsuperior.dslearnbds.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_content")
 public class Content extends Lesson {
-	private static final long serialVersionUID = 1L;
 
 	private String textContent;
 	private String videoUri;

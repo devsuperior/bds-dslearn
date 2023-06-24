@@ -1,24 +1,23 @@
 package com.devsuperior.dslearnbds.entities;
 
-import java.io.Serializable;
 import java.time.Instant;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import java.util.Objects;
 
 import com.devsuperior.dslearnbds.entities.enums.DeliverStatus;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
 @Entity
 @Table(name = "tb_deliver")
-public class Deliver implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Deliver {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -125,10 +124,7 @@ public class Deliver implements Serializable {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -140,11 +136,6 @@ public class Deliver implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Deliver other = (Deliver) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
+		return Objects.equals(id, other.id);
 	}
 }
