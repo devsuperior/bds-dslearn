@@ -99,6 +99,10 @@ public class Enrollment {
 		this.onlyUpdate = onlyUpdate;
 	}
 
+	public Set<Lesson> getLessonsDone() {
+		return lessonsDone;
+	}
+
 	public List<Deliver> getDeliveries() {
 		return deliveries;
 	}
