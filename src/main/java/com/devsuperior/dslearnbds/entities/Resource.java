@@ -106,6 +106,10 @@ public class Resource {
 		this.offer = offer;
 	}
 
+	public List<Section> getSections() {
+		return sections;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
